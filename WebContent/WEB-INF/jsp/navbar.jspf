@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">PilsView - Review hier al je Pils!</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="../../javasite/">Home</a></li>
+      <li><a href="jsp/pils.jsp">Pils</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="/javasite/login">Login</a></li>
+    </ul>
+  </div>
+</nav>
