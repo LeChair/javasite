@@ -22,7 +22,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="https://phpoll.com/login/process" method="post" role="form" style="display: block;">
+								<form id="login-form" action="LoginServlet" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="username" id="l_username" tabindex="1" class="form-control" placeholder="Username" value="">
 									</div>

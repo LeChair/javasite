@@ -2,9 +2,9 @@
 
 <body>
 
-<%@ include file="../WEB-INF/jsp/navbar.jspf"%>
+	<%@ include file="../WEB-INF/jsp/navbar.jspf"%>
 
-<p> hoi </p>
+	<p>hoi</p>
 
 </body>
 
