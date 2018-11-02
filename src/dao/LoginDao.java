@@ -6,8 +6,7 @@ import beans.LoginBean;
 import database.DBConnection;  
 
 public class LoginDao {  
-	public boolean validate(LoginBean loginBean){  
-		boolean status = false;
+	public int validate(LoginBean loginBean){  
 		String name = loginBean.getUserName();
 		String pass = loginBean.getPassword();
 		Connection con = null;
@@ -21,9 +20,17 @@ public class LoginDao {
 			ps.setString(2,pass);  
 
 			ResultSet rs=ps.executeQuery();  
-			status=rs.next();  
-
+			
+			try{
+				rs.first();
+				String id = rs.getString("user_id");
+				return Integer.valueOf(id);
+			}catch (SQLException ex){
+				return 0;
+			}
+			
+			
 		}catch(Exception e){System.out.println(e);}  
-		return status;  
+		return 0;  
 	}  
 }  

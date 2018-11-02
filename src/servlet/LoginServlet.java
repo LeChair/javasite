@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import beans.LoginBean;
 import dao.LoginDao;
+import dao.UserDao;
 /**
  * Servlet implementation class Servlet
  */
@@ -60,14 +61,16 @@ public class LoginServlet extends HttpServlet {
 		loginBean.setPassword(p); 
 		LoginDao loginDao = new LoginDao();
 		
-		boolean userLoggedIn = loginDao.validate(loginBean);
+		int userID = loginDao.validate(loginBean);
 		
-		if(userLoggedIn = true)   //On success, you can display a message to user on Home page
+		if(userID != 0)   //On success, you can display a message to user on Home page
 		{
-			RequestDispatcher rd=request.getRequestDispatcher("/");  
-			rd.forward(request,response);
+			LoginBean userBean = UserDao.getUser(userID);
 			HttpSession loginSession = request.getSession(true);
 			loginSession.setMaxInactiveInterval(60*60);
+			request.getSession().setAttribute("userBean", userBean);
+			RequestDispatcher rd=request.getRequestDispatcher("/");  
+			rd.forward(request,response);
 		}
 		else   //On Failure, display a meaningful message to the User.
 		{

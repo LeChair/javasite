@@ -5,18 +5,19 @@
 			<a class="navbar-brand" href="../../javasite/">PilsView - Review
 				hier al je Pils!</a>
 		</div>
-		<%
-		if (session.isNew()) {
-		    // Freshly created.
-			%>
+		
+		<% LoginBean userBean = (LoginBean) request.getSession().getAttribute("userBean");  %>
+		
+		<% if (userBean != null) {	%>
 			<ul class="nav navbar-nav">
 				<li><a href="../../javasite/">Home</a></li>
 				<li><a href="/javasite/pils">Pils</a></li>
 				<li><a href="/javasite/contact">Contact</a></li>
-				<li><a href="/javasite/login">Login</a></li>
-				<li>Welcome, <% out.println(LoginBean.getUserName()); %> </li>
+				<li><a href="/javasite/logout">Logout</a></li>
+				<li>Welkom <%= userBean.getUserName() %>!</li>
 			</ul>
-		<%
+			
+	<% 
 		} else {
 		    // Already created.
 		    %>

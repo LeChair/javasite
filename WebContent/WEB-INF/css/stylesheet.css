@@ -97,3 +97,18 @@ body {
 	background-color: #1CA347;
 	border-color: #1CA347;
 }
+.pils{
+	width: 1900px;
+	height: 100%;
+}
+.navbar{
+	width: 100%;
+}
+.boes{
+	width: 75px;
+	height: 100%;
+}
+.borders{
+	border: 2px solid black;
+}
+
