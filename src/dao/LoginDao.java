@@ -12,8 +12,10 @@ public class LoginDao {
 		Connection con = null;
 		PreparedStatement ps= null;
 		try{  
+			// Create connection with DB
 			con = DBConnection.createConnection();
-
+			
+			// Get all data from DB if username and password are equal to the credentials entered by user
 			String query = "select * from user where username=? and password=?";
 			ps = con.prepareStatement(query);
 			ps.setString(1,name);  
